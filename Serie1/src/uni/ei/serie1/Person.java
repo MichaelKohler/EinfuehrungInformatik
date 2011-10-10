@@ -27,7 +27,6 @@ public class Person {
 
   private int getRandomNumber() {
     int random = (int) (Math.random() * (Serie1._inhabitants - 1) + 1);
-    System.out.println(random);
     return random;
   }
 

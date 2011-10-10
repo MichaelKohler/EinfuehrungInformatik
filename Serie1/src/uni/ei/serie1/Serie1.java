@@ -32,7 +32,6 @@ public class Serie1 {
       }
       _genList.add(currentPersList);
     }
-    System.out.println(_genList.size());
   }
 
 }
