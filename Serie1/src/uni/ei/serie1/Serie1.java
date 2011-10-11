@@ -7,6 +7,7 @@
 package uni.ei.serie1;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Serie1 {
 
@@ -16,6 +17,8 @@ public class Serie1 {
 
   public static void main(String[] args) {
     createLists();
+    System.out.println("Lists generated.");
+    getChildren(0, 1);
   }
 
   private static void createLists() {
@@ -31,6 +34,23 @@ public class Serie1 {
 
       }
       _genList.add(currentPersList);
+    }
+  }
+  
+  private static void getChildren(int generation, int index){
+    // usage: pass start generation and index of a person. Returns a list of children
+    int nextGen = generation+1;
+    if(nextGen == _genList.size()){
+      return;
+    }
+    ArrayList currentGen = (ArrayList) _genList.get(generation+1);
+    for(int i=0; i < _inhabitants; i++){
+      Person currentPerson = (Person) currentGen.get(i);
+      ArrayList currentParents = currentPerson._parentList;
+      if((Integer)currentParents.get(0) == index || (Integer)currentParents.get(1) == index){
+        System.out.println("Gen: "+ nextGen +" index: "+i+" p: "+index);
+        getChildren(nextGen, i);
+      }
     }
   }
 

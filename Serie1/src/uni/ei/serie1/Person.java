@@ -7,10 +7,11 @@
 package uni.ei.serie1;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Person {
 
-  public static ArrayList _parentList = new ArrayList(2);
+  public ArrayList _parentList = new ArrayList(2);
 
   public Person(boolean aNotFirstGeneration) {
     if (aNotFirstGeneration)
@@ -21,8 +22,8 @@ public class Person {
     int random1 = getRandomNumber(); // first parent
     int random2 = getRandomNumber(); // second parent
 
-    _parentList.add(random1);
-    _parentList.add(random2);
+    this._parentList.add(random1);
+    this._parentList.add(random2);
   }
 
   private int getRandomNumber() {
