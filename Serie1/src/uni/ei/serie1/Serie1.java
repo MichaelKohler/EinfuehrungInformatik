@@ -16,7 +16,8 @@ public class Serie1 {
 
   public static void main(String[] args) {
     createLists();
-    getChildren(0, 1);
+    getChildren(0, 1); // wie würde bei dieser rekursiven Methode das Zählen
+                       // funktionieren?
   }
 
   private static void createLists() {
@@ -40,9 +41,9 @@ public class Serie1 {
     if (nextGen == _genList.size()) {
       return;
     }
-    ArrayList currentGen = (ArrayList) _genList.get(nextGen);
+    ArrayList nextGenerationList = (ArrayList) _genList.get(nextGen);
     for (int i = 0; i < _inhabitants; i++) {
-      Person currentPerson = (Person) currentGen.get(i);
+      Person currentPerson = (Person) nextGenerationList.get(i);
       ArrayList currentParents = currentPerson._parentList;
       if ((Integer) currentParents.get(0) == index || (Integer) currentParents.get(1) == index) {
         getChildren(nextGen, i);
