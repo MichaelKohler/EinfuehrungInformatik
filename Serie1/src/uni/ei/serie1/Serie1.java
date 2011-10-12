@@ -36,7 +36,8 @@ public class Serie1 {
   }
 
   private static void getChildren(int generation, int index) {
-    // usage: pass start generation and index of a person. Returns a list of children
+    // usage: pass start generation and index of a person.
+    // returns a list of children
     int nextGen = generation + 1;
     if (nextGen == _genList.size()) {
       return;
@@ -45,7 +46,8 @@ public class Serie1 {
     for (int i = 0; i < _inhabitants; i++) {
       Person currentPerson = (Person) nextGenerationList.get(i);
       ArrayList currentParents = currentPerson._parentList;
-      if ((Integer) currentParents.get(0) == index || (Integer) currentParents.get(1) == index) {
+      if ((Integer) currentParents.get(0) == index
+           || (Integer) currentParents.get(1) == index) {
         getChildren(nextGen, i);
       }
     }
